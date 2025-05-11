@@ -1,0 +1,25 @@
+name: Log Order to Google Sheet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send_to_google_sheets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Google Sheets API client
+        run: npm install googleapis
+
+      - name: Log order to Google Sheet
+        run: |
+          echo "This is where you'd add code to authenticate with Google Sheets and log the order"
+          # Normally you'd run a script here like:
+          # node scripts/log-order.js
